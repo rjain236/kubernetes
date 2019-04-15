@@ -18,3 +18,7 @@ gradle-app.setting
 /.idea/*
 
 /target/
+
+webserver/target/
+
+.DS_Store
