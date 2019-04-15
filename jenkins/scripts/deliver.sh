@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-echo "delivery is completed!!!"
+echo "delivery is completed!"
