@@ -1,0 +1,41 @@
+
+# Default values for jenkins.
+# This is a YAML-formatted file.
+# Declare name/value pairs to be passed into your templates.
+# name: value
+
+## Overrides for generated resource names
+# See templates/_helpers.tpl
+# nameOverride:
+# fullnameOverride:
+
+master:
+  nodePort: 32000
+  # List of plugins to be install during Jenkins master start
+  installPlugins:
+    - kubernetes:1.12.6
+    - workflow-job:2.31
+    - workflow-aggregator:2.5
+    - credentials-binding:1.16
+    - git:3.9.3
+    - greenballs:1.15
+
+agent:
+  enabled: true
+  cpu: "200m"
+  memory: "256Mi"
+  volumes:
+    - type: HostPath
+      hostPath: /var/run/docker.sock
+      mountPath: /var/run/docker.sock
+
+persistence:
+  size: 20Gi
+
+networkPolicy:
+  apiVersion: networking.k8s.io/v1
+
+## Install Default RBAC roles and bindings
+rbac:
+  serviceAccount:
+    name: default
