@@ -1,8 +1,9 @@
 pipeline {
     agent {
-        docker {
-            image 'maven:3-alpine'
-            args '-v /root/.m2:/root/.m2'
+        kubernetes {
+          label 'pipeline-pods'
+          defaultContainer 'jnlp'
+          yamlFile './jenkins/jenkinsPipelinePods.yaml'
         }
     }
     stages {
