@@ -10,8 +10,8 @@ spec:
       command:
         - cat
       tty: true
-    - name: docker
-      image: docker
+    - name: kubectl
+      image: gcr.io/cloud-builders/kubectl
       command:
         - cat
       tty: true

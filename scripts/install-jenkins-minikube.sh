@@ -3,7 +3,7 @@
 kubectl create -f ../k8-definition/jenkins/minikube/namespace.yaml
 kubectl create -f ../k8-definition/jenkins/minikube/volume.yaml
 
-HELM_VERSION=2.9.1
+HELM_VERSION=2.13.1
 
 helm init
 helm update
