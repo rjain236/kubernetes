@@ -16,7 +16,9 @@ pipeline {
         }
         stage('Deliver') {
             steps {
-                sh './jenkins/scripts/deliver.sh'
+                container('jnlp') {
+                    sh './jenkins/scripts/deliver.sh'
+                }
             }
         }
     }
