@@ -17,3 +17,6 @@ helm install --name jenkins -f ../k8-definition/jenkins/minikube/values.yaml sta
 
 #print password to connect to jenkins
 printf $(kubectl get secret --namespace jenkins-project jenkins -o jsonpath="{.data.jenkins-admin-password}" | base64 --decode);echo
+
+#give cluster permission to default namespace
+kubectl apply -f ../k8-definition/clusterrolebinding/defaultUserBinding.yaml
