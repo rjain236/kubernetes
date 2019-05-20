@@ -15,11 +15,11 @@ pipeline {
             }
         }
         stage('Deliver') {
-            steps {
+            //steps {
                 //container('jnlp') {
                 //    sh './jenkins/scripts/deliver.sh'
                 //}
-            }
+            //}
         }
     }
 }
