@@ -14,12 +14,12 @@ pipeline {
                 }
             }
         }
-        stage('Deliver') {
-            //steps {
-                //container('jnlp') {
-                //    sh './jenkins/scripts/deliver.sh'
-                //}
-            //}
-        }
+        /*stage('Deliver') {
+            steps {
+                container('jnlp') {
+                    sh './jenkins/scripts/deliver.sh'
+                }
+            }
+        }*/
     }
 }
