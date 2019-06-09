@@ -10,7 +10,7 @@ pipeline {
         stage('Build') {
             steps {
                 container('maven') {
-                    sh 'DOCKER_HOST=tcp://localhost:2375 mvn -B -DskipTests clean package'
+                    sh 'DOCKER_HOST=tcp://localhost:2375 mvn -B -DskipTests clean deploy'
                 }
             }
         }
