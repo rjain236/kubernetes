@@ -29,5 +29,5 @@ spec:
     - name: dind-storage
       emptyDir: {}
     - name: jenkins-pvc
-        persistentVolumeClaim:
-          claimName: jenkins
+      persistentVolumeClaim:
+        claimName: myclaim
