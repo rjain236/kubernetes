@@ -6,4 +6,5 @@ minikube addons enable ingress
 kubectl create -f ../k8-definition/ingress/minikube-jfrog.yaml
 
 #ingress for jenkins
-kubectl create -f ../k8-definition/ingress/minikube-jenkins.yaml
+#css doesn't work with ingress
+#kubectl create -f ../k8-definition/ingress/minikube-jenkins.yaml
