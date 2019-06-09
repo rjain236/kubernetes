@@ -30,4 +30,4 @@ spec:
       emptyDir: {}
     - name: jenkins-pvc
       persistentVolumeClaim:
-        claimName: myclaim
+        claimName: jenkins
