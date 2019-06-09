@@ -24,30 +24,45 @@
 
     <repositories>
         <repository>
-            <id>central</id>
-            <name>Maven Repository Switchboard</name>
-            <layout>default</layout>
-            <url>http://repo1.maven.org/maven2</url>
             <snapshots>
                 <enabled>false</enabled>
             </snapshots>
+            <id>central</id>
+            <name>libs-release</name>
+            <url>http://jfrog.artifactory:80/unsecured/artifactory/libs-release</url>
+        </repository>
+        <repository>
+            <snapshots />
+            <id>snapshots</id>
+            <name>libs-snapshot</name>
+            <url>http://jfrog.artifactory:80/unsecured/artifactory/libs-snapshot</url>
         </repository>
     </repositories>
-
     <pluginRepositories>
         <pluginRepository>
-            <id>central</id>
-            <name>Maven Plugin Repository</name>
-            <url>http://repo1.maven.org/maven2</url>
-            <layout>default</layout>
             <snapshots>
                 <enabled>false</enabled>
             </snapshots>
-            <releases>
-                <updatePolicy>never</updatePolicy>
-            </releases>
+            <id>central</id>
+            <name>libs-release</name>
+            <url>http://jfrog.artifactory:80/unsecured/artifactory/libs-release</url>
+        </pluginRepository>
+        <pluginRepository>
+            <snapshots />
+            <id>snapshots</id>
+            <name>libs-snapshot</name>
+            <url>http://jfrog.artifactory:80/unsecured/artifactory/libs-snapshot</url>
         </pluginRepository>
     </pluginRepositories>
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <name>artifactory-artifactory-0-snapshots</name>
+            <url>http://jfrog.artifactory:80/unsecured/artifactory/libs-snapshot</url>
+        </snapshotRepository>
+    </distributionManagement>
+
     <build>
         <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
             <plugins>

@@ -7,6 +7,9 @@ spec:
   containers:
     - name: maven
       image: maven:alpine
+      volumeMounts:
+        - name: jenkins-pvc
+          mountPath: /root/.m2
       command:
         - cat
       tty: true
@@ -25,3 +28,6 @@ spec:
   volumes:
     - name: dind-storage
       emptyDir: {}
+    - name: jenkins-pvc
+        persistentVolumeClaim:
+          claimName: jenkins

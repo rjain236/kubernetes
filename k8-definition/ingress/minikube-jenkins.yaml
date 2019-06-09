@@ -1,0 +1,20 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: jenkins-ingress-minikube
+  namespace: jenkins-project
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/rewrite-target: /$1
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    nginx.ingress.kubernetes.io/use-regex: "true"
+spec:
+  rules:
+    - host: jenkins.host
+      http:
+        paths:
+          - path: /.*
+            backend:
+              serviceName: expose-jenkins
+              servicePort: 8080
+

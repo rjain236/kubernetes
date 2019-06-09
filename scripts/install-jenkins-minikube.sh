@@ -20,3 +20,7 @@ printf $(kubectl get secret --namespace jenkins-project jenkins -o jsonpath="{.d
 
 #give cluster permission to default namespace
 kubectl apply -f ../k8-definition/clusterrolebinding/defaultUserBinding.yaml
+
+#expose the jenkins as a service for ingress
+#css doesn't work with ingress
+#kubectl apply -f ../k8-definition/jenkins/minikube/expose-jenkins.yaml
