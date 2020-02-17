@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-kubectl create -f ../k8-definition/jfrog/minikube/namespace.yaml
+kubectl create -f ../k8-definition/jfrog/namespace.yaml
 
 HELM_VERSION=2.13.1
 
