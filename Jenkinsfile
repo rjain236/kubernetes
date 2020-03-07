@@ -10,7 +10,9 @@ pipeline {
         stage('Build') {
             steps {
                 container('maven') {
+                    sh 'echo "starting maven!"'
                     sh 'DOCKER_HOST=tcp://localhost:2375 mvn -B -DskipTests clean deploy'
+                    sh 'echo "maven over!"'
                 }
             }
         }
