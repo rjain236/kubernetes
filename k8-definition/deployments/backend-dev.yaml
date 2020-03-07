@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
       - name: backend
-        image: rjain236/webserver:1.1.0-SNAPSHOT
+        image: rjain236/webserver:1.2.0-SNAPSHOT
         resources:
           limits:
             memory: "500Mi"
