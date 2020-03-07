@@ -11,4 +11,4 @@ spec:
     storage: 20Gi
   persistentVolumeReclaimPolicy: Retain
   hostPath:
-    path: /data/jenkins-volume/
+    path: /Users/rjain236/Personal/Projects/data/jenkins-volume
