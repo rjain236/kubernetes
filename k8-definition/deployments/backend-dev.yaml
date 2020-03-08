@@ -14,10 +14,11 @@ spec:
       containers:
       - name: backend
         image: rjain236/webserver:1.2.0-SNAPSHOT
+        command: [ "sh", "-c", "java -jar /hello-docker-app.jar" ]
         resources:
           limits:
             memory: "500Mi"
             cpu: "100m"
         imagePullPolicy: Always
         ports:
-          - containerPort: 8080
+          - containerPort: 8083

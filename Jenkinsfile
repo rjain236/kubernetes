@@ -27,11 +27,7 @@ pipeline {
         stage('Deploy Production') {
           steps{
             container('kubectl') {
-            // Change deployed image in canary to the one we just built
-            // #sh("sed -i.bak 's#gcr.io/cloud-solutions-images/gceme:1.0.0#${imageTag}#' ./k8s/production/*.yaml")
-              sh("kubectl --namespace=dev apply -f k8-definition/deployments/")
-              sh("kubectl --namespace=dev apply -f k8-definition/services/")
-            //  sh("echo http://`kubectl --namespace=production get service/${feSvcName} -o jsonpath='{.status.loadBalancer.ingress[0].ip}'` > ${feSvcName}")
+                sh './jenkins/scripts/deploy_dev.sh'
             }
           }
         }
