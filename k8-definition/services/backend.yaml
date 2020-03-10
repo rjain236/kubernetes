@@ -19,9 +19,11 @@ metadata:
 spec:
   ports:
   - name: http
-    port: 8080
-    targetPort: 8080
+    port: 8083
+    targetPort: 8083
+    nodePort: 30222
     protocol: TCP
+  type: NodePort
   selector:
     role: backend
     app: backend
